@@ -1,4 +1,3 @@
-
 let people = [
 	{fname:"Alex", lname:"Smith", province:"BC", age:33},
 	{fname:"Angela", lname:"Jones", province:"AB", age:61},
@@ -55,12 +54,12 @@ let processPeople = function(data, callback){
 					callback (data[i]);
 			}
 		}
- 		}
+ 		}	
  	
 	}
 
 processPeople(people, function(item){
-		if (item.age>=25){
+		if (item.age>=0){
 		console.log(item.fname, item.age)
 		}
 		}

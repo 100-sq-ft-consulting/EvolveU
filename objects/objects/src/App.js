@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
+import logo2 from './logo2.svg';
 import MathComp from './components/MathComp';
 // import Links from './Links';
 import './App.css';
-import math from './components/math.js'
 import AccountApp from './components/AccountApp'
 import AccountsControllerApp from './components/AccountsControllerApp'
 
@@ -21,18 +21,19 @@ class App extends React.Component {
             switch(event.toLowerCase()) {
               case "flower":
                 console.log("run flower");
-                this.setState({linden: <App-header/>});
+                this.setState({linden:  <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo"/>
+                </header>});
               break;
               case "calculator":
                 console.log("run calculator");
                 this.setState({linden:<MathComp/>});
               break;
-              case "calender":
-                console.log("run calender");
+              case "cities":
+                console.log("run cities");
               break;
               case "cloud":
                 console.log("run cloud");
-                this.setState({linden:<AccountsControllerApp/>});
               break;
               case "database":
                 console.log("run database");
@@ -54,7 +55,7 @@ class App extends React.Component {
                  <button  onClick={()=> {this.selector('flower')}}> 
                   <img 
                     className="App-icon" 
-                    src={logo} color="black" alt="descripcion del icono"
+                    src={logo2}  alt="descripcion del icono"
                   />
                 </button><button  onClick={()=> {this.selector('calender')}}> 
                   <img 
@@ -69,10 +70,10 @@ class App extends React.Component {
                     alt="descripcion del icono"
                   />
                 </button>
-                <button onClick={()=> {this.selector('cloud')}}> 
+                <button onClick={()=> {this.selector('cities')}}> 
                   <img 
                     className="App-icon"
-                    src="https://img.icons8.com/windows/96/0000000/cloud.png" 
+                    src="https://img.icons8.com/ios/100/0000000/city.png" 
                     alt="descripcion del icono"
                   />
                 </button>
@@ -84,9 +85,7 @@ class App extends React.Component {
                   />
                 </button>
                 </div>
-                <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                </header> 
+                
 
                 <div>{this.state.linden}</div>
               

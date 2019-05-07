@@ -1,7 +1,7 @@
 
 class Account {
 	constructor(a,b){
-	  	this.balance=a;
+	  	this.balance=Number(a);
 	  	this.accountName=b;
   	}
 	checkBalance() {
@@ -17,6 +17,9 @@ class Account {
 			this.balance=newbal;
 			return (this.balance)
 	}
-	
+	modifyAccountName(newName) {
+  		return this.accountName= newName
+		}
+
 }  		
 export default Account

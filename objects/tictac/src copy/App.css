@@ -8,12 +8,6 @@
   pointer-events: none;
 }
 
-.App-icon {
-  animation: App-logo-spin infinite 20s linear;
-  height: 20vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,27 +31,3 @@
     transform: rotate(360deg);
   }
 }
-
-.App-row {
-  display: flex;
-  justify-content: center;
-  /*width: 80%;*/
-  background-color: skyblue;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-button {
-  
-background-color: Transparent;
-border: none;}
-
-.logo {
-
-    width: 100px;
-    height: 100px;
-    padding-right: 400px;
-    
-
-}
-

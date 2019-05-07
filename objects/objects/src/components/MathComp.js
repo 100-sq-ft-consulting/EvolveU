@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import '../App.js' ;
 import math from './math.js'
 
@@ -26,7 +26,6 @@ class MathComp extends React.Component {
      a=parseInt(document.getElementById("input1").value)
      b=parseInt(document.getElementById("input2").value)
 
-	const test="cero"
 
     switch(event.toLowerCase()) {
       case "sum":

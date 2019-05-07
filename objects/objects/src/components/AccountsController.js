@@ -7,7 +7,10 @@ class AccountsController {
 
 	// create Contoller
 	constructor(){
-		this.accountsArray=[];
+		this.accountsArray=[]
+
+    
+    ;
 
 		this.maxBalance=0;
 		this.minBalance=0;
@@ -18,21 +21,27 @@ class AccountsController {
 	createNewCustomerAccount(balance,name){
 		let newAccount = new Account(balance,name);
 		// QA for name not being used
-		this.accountsArray.push(newAccount);
+		return this.accountsArray.push(newAccount);
 		
 	}
 
 
 	deleteCustomerAccount(delTarget){
 		let tempArray=this.accountsArray.filter( (value)=> value.accountName !== delTarget)
-		this.accountsArray=tempArray
+		return this.accountsArray=tempArray
 
 	}
 	
 //identify max and min travelling through array of accounts, comparing 
 //current balances
 
-	// findMaxBalance(arr) {
+	findMaxBalance(arr) {
+		let max=arr[0];
+	  	
+	  	arr.forEach((item) =>{if (max.balance <= item.balance) {max=item}})
+	  	
+	  	return max
+	  }
   		// return Math.max.apply(null, arr.balance);
 	  	
 	  // 	var max = .apply(arr.balance, arr);
@@ -54,15 +63,15 @@ class AccountsController {
 	  	arr.forEach((item) => {total = total + item.balance})	
 	  	return total
 	  }
-
-}
+		
+		
+	  }
 
 
 
 
 
 //calculate the total of all accounts (Total balance)
-
 
 
 export default AccountsController
