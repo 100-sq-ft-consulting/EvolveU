@@ -1,6 +1,6 @@
 
 // Name, Latitude, Longitude, Population
-
+//
 class City {
 	constructor(a,b,c,d){
 

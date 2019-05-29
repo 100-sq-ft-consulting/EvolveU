@@ -96,7 +96,7 @@ class CitiesApp extends React.Component{
             }
 		}
 
-		
+		//
     openNew = () => { 
       console.log("in Create new City", this.openingName.current.value);
     		this.list.push(new City(
