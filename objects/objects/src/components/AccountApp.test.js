@@ -3,8 +3,8 @@ import AccountApp from "./AccountApp";
 //test for construct
 
 
-test('Test for constructor', () => {
+test('Test for APP constructor', () => {
 	let t = new AccountApp();
-	expect(t.state.currentBal).toBe(0);
+	expect(t.list.length).toBe(0);
 
 })

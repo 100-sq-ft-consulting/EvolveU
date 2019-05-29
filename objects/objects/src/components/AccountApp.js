@@ -62,11 +62,12 @@ class AccountApp extends React.Component{
 	constructor(){
 		super()
 
-	  	this.openingName=React.createRef();
+	  this.openingName=React.createRef();
 		this.openingBalance=React.createRef();
 
 	  	
 		this.list=[]
+
 		this.selector = this.selector.bind(this)
 
 	  }	
@@ -92,7 +93,7 @@ class AccountApp extends React.Component{
 					this.setState({nonsense: null});
 		          break;
 		          case "changename":
-		          console.log("in withdraw",amount);
+		          console.log("in change Name",accountNumber);
 					this.list[accountNumber].modifyAccountName(amount);
 					this.setState({nonsense: null});	
 		          break;
@@ -101,9 +102,12 @@ class AccountApp extends React.Component{
     }
 
     openNew = () => { 
-    	console.log("roman2",this.openingBalance.current.value,this.openingName.current.value )
-    	this.list.push(new Account(this.openingBalance.current.value, this.openingName.current.value))
-    	this.setState({nonsense: null});
+    	console.log("roman2",this.openingBalance.current.value,
+				this.openingName.current.value )
+				
+    		this.list.push(new Account(this.openingBalance.current.value, 
+    		this.openingName.current.value))
+    		this.setState({nonsense: null});
 
     }
     // class properites
@@ -161,7 +165,7 @@ class AccountApp extends React.Component{
 				<div>
 					<h1>Luis Greatest Account Controller App</h1>
 
-					<div className="Max-min-total">
+					<div className="accountApp-row" >
 
 					<div width = {100}>
 			                  <img 

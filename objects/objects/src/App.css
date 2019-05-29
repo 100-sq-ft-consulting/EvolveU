@@ -9,12 +9,15 @@
 }
 
 .App-icon {
+  display: inline-flex;
   animation: App-logo-spin infinite 20s linear;
   height: 20vmin;
   pointer-events: none;
 }
 
 .App-header {
+  display: inline-flex;
+  overflow-y: scroll;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -39,10 +42,25 @@
 }
 
 .App-row {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  background-color: skyblue;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.accountApp-row {
   display: flex;
   justify-content: center;
   /*width: 80%;*/
-  background-color: skyblue;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.LLApp-row {
+  display: flex;
+  justify-content: center;
+  /*width: 80%;*/
   margin-top: 30px;
   margin-bottom: 40px;
 }
@@ -53,10 +71,10 @@ background-color: Transparent;
 border: none;}
 
 .logo {
-
+    display: inline-flex;
     width: 100px;
     height: 100px;
-    padding-right: 400px;
+    padding-right: 100px;
     
 
 }

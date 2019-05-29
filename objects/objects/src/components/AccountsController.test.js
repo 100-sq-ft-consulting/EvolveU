@@ -14,7 +14,7 @@ test('Test new customer account', () => {
 	AC.createNewCustomerAccount(0,"luis");
 	expect(AC.accountsArray.length).toBe(1);
 	
-	expect(AC.accountsArray[0]).toEqual({"accountName": "luis", "balance": 0});
+	expect(AC.accountsArray[0].balance).toEqual(0);
 })
 test('Test account delete', () => {
 
@@ -35,7 +35,7 @@ test('Test find highest balance', () => {
 	
 
 	let max=AC.findMaxBalance(AC.accountsArray);
-	expect(max).toEqual(10);
+	expect(max.balance).toEqual(10);
 })	
 test('Test find lowest balance', () => {
 

@@ -4,8 +4,9 @@ import logo2 from './logo2.svg';
 import MathComp from './components/MathComp';
 // import Links from './Links';
 import './App.css';
+import CitiesApp from './components/CitiesApp'
 import AccountApp from './components/AccountApp'
-import AccountsControllerApp from './components/AccountsControllerApp'
+import LLApp from './components/LLApp'
 
 
 class App extends React.Component {
@@ -25,22 +26,24 @@ class App extends React.Component {
                 <img src={logo} className="App-logo" alt="logo"/>
                 </header>});
               break;
+              case "linkedlists":
+                console.log("run linked lists");
+                this.setState({linden:<LLApp/>});
+              break;
               case "calculator":
-                console.log("run calculator");
+                console.log("calculator");
                 this.setState({linden:<MathComp/>});
               break;
               case "cities":
                 console.log("run cities");
-              break;
-              case "cloud":
-                console.log("run cloud");
+                this.setState({linden:<CitiesApp/>});
               break;
               case "database":
                 console.log("run database");
                 this.setState({linden:<AccountApp/>});
               break;
               case "exit":
-                console.log("Run Un Mount")
+                console.log("Run UnMount")
               break;
               default:
             }
@@ -57,31 +60,32 @@ class App extends React.Component {
                     className="App-icon" 
                     src={logo2}  alt="descripcion del icono"
                   />
-                </button><button  onClick={()=> {this.selector('calender')}}> 
+                </button><button  onClick={()=> {this.selector('LinkedLists')}}> 
                   <img 
                     className="App-icon" 
-                    src="https://img.icons8.com/windows/96/0000000/calendar.png" alt="descripcion del icono"
+                    src="https://img.icons8.com/ios/50/000000/link-filled.png" 
+                    alt="Chain icon"
                   />
                 </button>
                 <button onClick={()=> {this.selector('calculator')}}> 
                   <img 
                     className="App-icon"
                     src="https://img.icons8.com/windows/96/000000/calculator.png" 
-                    alt="descripcion del icono"
+                    alt="Calculator icon"
                   />
                 </button>
                 <button onClick={()=> {this.selector('cities')}}> 
                   <img 
                     className="App-icon"
                     src="https://img.icons8.com/ios/100/0000000/city.png" 
-                    alt="descripcion del icono"
+                    alt="Cities icon"
                   />
                 </button>
                 <button onClick={()=> {this.selector('database')}}> 
                   <img 
                     className="App-icon"
                     src="https://img.icons8.com/windows/96/0000000/database.png" 
-                    alt="descripcion del icono"
+                    alt="Accounts Icon"
                   />
                 </button>
                 </div>
