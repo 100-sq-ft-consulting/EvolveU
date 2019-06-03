@@ -42,16 +42,19 @@ class LinkCard extends React.Component{
 class LLApp extends React.Component{
 	constructor(){
 		super()
-        this.openingName=React.createRef(); 
-        this.openingLatitude=React.createRef(); 
-        this.openingLongitude=React.createRef();        
-		this.openingPopulation=React.createRef();	
-        
-        this.list=[]
-
+		this.headLink= null;
+        this.tailLink=null;
+		
+		this.linkSubject=React.createRef(); 
+        this.linkAmount=React.createRef(); 
+        this.linkPrev=React.createRef();        
+		this.linkNext=React.createRef();	
+    
 		this.selector = this.selector.bind(this)
-      }	
-      
+	  }	
+	  
+	
+	
 	selector(event,cityNumber,amount){
             console.log("Button pressed: ",event);
             
@@ -65,7 +68,7 @@ class LLApp extends React.Component{
 	              default:
             }
     }
-    openNew = () => { 
+    openNewLink = () => { 
         console.log("in Create new Linked Link",)
     		this.list.push(new Link(
                 this.linkName.current.name, 
@@ -112,15 +115,15 @@ class LLApp extends React.Component{
                     </div>
 		        </div>
 				<p> Enter name, balance and link references (Previous/ Next) before pressing the CREATE button below</p>
-	            <button onClick={ this.openNew }>CREATE</button>
+	            <button onClick={ this.openNewLink }>CREATE</button>
 	            <br/>
-				<input ref={this.openingName} placeholder="Name?"></input>
+				<input ref={this.subject} placeholder="Subject?"></input>
 				<br/>
-				<input ref={this.openingLatitude} placeholder="Balance?"></input>
+				<input ref={this.amount} placeholder="Amount?"></input>
                 <br/>
-                <input ref={this.openingLongitude} placeholder="Previous Link Reference?"></input>
+                <input ref={this.prev} placeholder="Previous Link Reference?"></input>
                 <br/>
-                <input ref={this.openingPopulation} placeholder="Next Link Reference?"></input>
+                <input ref={this.next} placeholder="Next Link Reference?"></input>
                 <br/>
 				
                 {LinkedList} 

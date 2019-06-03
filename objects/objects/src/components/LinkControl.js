@@ -1,87 +1,51 @@
 import React,{Component} from 'react'
-import Node from './Node'
+import Link from './Link'
 
 class LinkControl extends Component{
     constructor(){
         super();
-        
-
-        this.Head= new Node("Head");
-        this.Tail =new Node("Tail");
-
-        this.Head.prev=null;
-        this.Head.next=this.Tail
-
-        this.Tail.prev=this.Head;
-        this.Tail.next=null;
-
-        this.current=this.Head;
+        this.head= null;
+        this.tail=null;
+        this.counter=1;
+        this.current=null;
+        this.temp=null;
     }
-
-    createNextNode(Name,Amount){
-        // I can only add nodes to "my right"   
-
-            this.newNode= new Node(Name,Amount);
-
-            //Likage updates on the right of current
-            this.newNode.next=this.current.next;
-            this.newNode.prev=this.current;
-
-            //Likage updates on the left of current
-            this.current.next.prev=this.newNode;
-            this.current.next=this.newNode;
-
-            //name swaping             
-            this.current=this.newNode;
+    createNode(Name,Amount){
+        if(this.current===null){
+            //adjusting if adding 1st node
+            let currentNode= new Node(Name,Amount);
+            currentNode.id= this.counter;
+            currentNode=this.head;
+            this.current= currentNode;
+            this.current.next=null;
+            this.current.prev=null;
             
+        }else if(this.current!=null&&this.temp===null){
+            //adjusting if adding 2nd node
+            this.temp = this.current;
+            let currentNode= new Node(Name,Amount);
+            this.temp.next= currentNode;
+            currentNode.id= this.counter;
+            currentNode.prev= this.temp;
+            currentNode.next= null;
+            currentNode=this.tail;
+            this.current= currentNode;
+            this.temp.next=this.current;
+        }else if(this.current.prev===null){
+               //adjusting if the node referncing head changes
+        }else if(this.current.next===null){
+            //adjusting if the node referncing tail changes
+        }else{
+            //adjusting if adding the node in the middle i.e head and tail stay the same
         }
-       
-    
-    moveLeft(){
-            //check we are not at the HEad
-            if (llcontroller.current.prev.prev!==null){
-            this.current=this.current.prev;
-            }
-
-            return this.current.subject
-        }
-
-            // //Likage updates on the left of current
-            // this.current.prev=this.current.prev.prev;
-            // this.current.next=this.current.prev
-
-            // //Likage updates on the right of current
-            // this.current.prev.next=this.current.next;
-            // this.current.next.prev=this.current.prev.prev;
-            
-
-            
-    
-    moveRight(){
+        this.counter++;
+    }
+    first(){
 
     }
-    moveToHead(){
-            if (current.prev===null)
-               {this.current=this.Head};
-            return this.current.subject
+    last(){
 
     }
-
-    moveToTail(){
-            if (current.next===null)
-                {this.current=this.Tail};
-            return this.current.subject
-
-    }
-
-    showNodeContent(){
-            return this.current.subject
-
-    }
-
-    //delete current node
-    //totalize amounts
-    //sort links
 
 }
 export default LinkControl
