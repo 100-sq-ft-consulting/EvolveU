@@ -12,6 +12,8 @@ test("Test for LL constructor",()=>{
 
     expect(llcontroller.current).toBe(llcontroller.Head);
 
+    // create tests to prove construction worls before adding nodes
+
     llcontroller.createNextNode("Luis",20);
     llcontroller.createNextNode("Nilou",30);
     llcontroller.createNextNode("lisetd",40);    
@@ -21,6 +23,7 @@ test("Test for LL constructor",()=>{
     
     llcontroller.moveLeft();
     console.log(llcontroller);
-  
+  // create tests for adding and deleting nodes
+  //edge cases for moving itno head and tail
 })
 

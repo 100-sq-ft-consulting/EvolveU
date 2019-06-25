@@ -1,0 +1,2 @@
+the number of records in the Calgary Bussiness licence database is:  30425
+the number of records in the Calgary comunity database (2016) is:  311
